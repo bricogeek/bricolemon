@@ -33,7 +33,7 @@
   #define BOARD_INFO_NAME "BRICOLEMON V1.0, Lemoncrest & BricoGeek colaboration."
 #endif
 
-
+//##Bricolemon_Definition.h##
 
 //
 //
@@ -167,26 +167,26 @@
   //#define E1_HARDWARE_SERIAL Serial2
   
 
-  #define TMC_BAUD_RATE 115200
+  #define TMC_BAUD_RATE 250000
   //
   // Software serial
   //
 
 
-    #define X_SERIAL_TX_PIN   1
-    #define X_SERIAL_RX_PIN   0
+    #define X_SERIAL_TX_PIN   0
+    #define X_SERIAL_RX_PIN   1
 
-    #define Y_SERIAL_TX_PIN   1
-    #define Y_SERIAL_RX_PIN   0
+    #define Y_SERIAL_TX_PIN   0
+    #define Y_SERIAL_RX_PIN   1
 
-    #define Z_SERIAL_TX_PIN   1
-    #define Z_SERIAL_RX_PIN   0
+    #define Z_SERIAL_TX_PIN   0
+    #define Z_SERIAL_RX_PIN   1
 
-    #define E0_SERIAL_TX_PIN  1
-    #define E0_SERIAL_RX_PIN  0
+    #define E0_SERIAL_TX_PIN  0
+    #define E0_SERIAL_RX_PIN  1
 
-    #define E1_SERIAL_TX_PIN  16
-    #define E1_SERIAL_RX_PIN  17
+    #define E1_SERIAL_TX_PIN  17
+    #define E1_SERIAL_RX_PIN  16
 
 
 
@@ -574,7 +574,7 @@ Tabla de pines dentro de la bricolemon para configuración
 // Set SDCARD_CONNECTION form 'ONBOARD' to 'LCD' and use an external SD (connected to LCD)
 #define HAS_ONBOARD_SD
 #ifndef SDCARD_CONNECTION
-  #define SDCARD_CONNECTION              ONBOARD
+  #define SDCARD_CONNECTION              ONBOARD                                             
 #endif
 
 #if SD_CONNECTION_IS(ONBOARD)
