@@ -8,7 +8,7 @@ Documentación: Carpeta que contiene la documentación de la Bricolemon, aquí s
 
 Este diseño nace de la colaboración de BricoGeek y Lemoncrest. La compra del producto se realiza desde [BricoGeek](https://tienda.bricogeek.com/impresion-3d-electronica/1476-bricolemon-revb.html)!
 
-Designed by Carlos Patiño para BricoGeek & Lemoncrest SL.
+Designed by Carlos Patiño (Parte de Lemoncrest Dev Team) para BricoGeek & Lemoncrest SL.
 
 Creative Commons Attribution/Share-Alike, all text above must be included in any redistribution. See license.txt for additional details.
 
