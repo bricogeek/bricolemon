@@ -1,6 +1,7 @@
 # bricolemon
 
 Firmware: Carpeta que contiene el firmware relativo a la Bricolemon
+
 Documentación: Carpeta que contiene la documentación de la Bricolemon, aquí se puede encontrar el esquema eléctrico así como el Pin-Demux al detalle.
 
 
