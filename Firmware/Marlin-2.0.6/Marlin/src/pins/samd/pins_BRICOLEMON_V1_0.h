@@ -61,10 +61,51 @@
 //
 // Limit Switches
 //
+
+//Añadimos gracias a @SrFerrete el detalle de utilizar un ENDSTOP en punto maximo en vez de mínimo.
+
+
+#ifdef USE_XMIN_PLUG
+#define X_MIN_PIN                             10
+#endif
+
+#ifdef USE_XMAX_PLUG
+#define X_MAX_PIN                             10
+#endif
+
+//Seccion Y
+#ifdef USE_YMIN_PLUG
+#define Y_MIN_PIN                             11
+#endif
+
+#ifdef USE_YMAX_PLUG
+#define Y_MAX_PIN                             11
+#endif
+
+//Seccion Z
+
+#ifdef USE_ZMIN_PLUG
+#define Z_MIN_PIN                             12
+#endif
+
+#ifdef USE_ZMAX_PLUG
+#define Z_MAX_PIN                             12
+#endif
+
+
+
+//Seccion E
+#define E_MIN_PIN                             48
+
+
+
+
+/*    Declaracion simple
 #define X_MIN_PIN                             10
 #define Y_MIN_PIN                             11
 #define Z_MIN_PIN                             12
-#define E_MIN_PIN                             48
+*/
+
 
 //
 // Z Probe (when not Z_MIN_PIN)
