@@ -94,8 +94,8 @@
 
 
 
-//Seccion E
-#define E_MIN_PIN                             48
+//Seccion Extruder, esto hace que sea un sensor de filamento
+#define FIL_RUNOUT_PIN                             48
 
 
 
