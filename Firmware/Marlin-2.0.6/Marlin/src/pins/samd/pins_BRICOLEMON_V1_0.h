@@ -98,8 +98,13 @@
 //Seccion Extruder, esto hace que sea un sensor de filamento
 #define FIL_RUNOUT_PIN                        48
 
-//Ejemplo de definición de un nuevo endstop, el cual iría al segundo eje Z
-//#define Z2_MIN_PIN                            48
+
+
+
+
+
+
+
 
 
 /*    Declaracion simple
@@ -136,9 +141,72 @@
 #define E0_DIR_PIN                            25
 #define E0_ENABLE_PIN                         29
 
+
+
+
+//Si tenemos solo marcado el e0, entonces podemos transformar el E1 en un eje a mayores
+#if EXTRUDERS < 2 
+
+/*
+Un detalle importante al utilizar motores independientes en los ejes es el tema del endstop, se puede utilizar uno únicamente o dos independientes.
+Para usar independientes hay que activar el Z_MULTI_ENDSTOPS, de manera que utilicemos una declaración del pin 14 para este nuevo endstop.
+
+Ejemplos de definición de endstop para motores que queramos poner en el E1, descomentar el que vayamos a utilizar, Maximo o mínimo.
+------- Poner debajo del X/Y/Z_DUAL_STEPPER_DRIVERS para que esté definido ------
+#define Z2_MIN_PIN                             14 
+#define X2_MIN_PIN                             14
+#define Y2_MIN_PIN                             14
+
+#define Z2_MAX_PIN                             14 
+#define X2_MAX_PIN                             14
+#define Y2_MAX_PIN                             14
+*/
+  #ifdef X_DUAL_STEPPER_DRIVERS
+
+    #define X2_STEP_PIN                           13
+    #define X2_DIR_PIN                            46
+    #define X2_ENABLE_PIN                         47
+
+  #endif
+
+  #ifdef Y_DUAL_STEPPER_DRIVERS
+    
+    #define Y1_STEP_PIN                           13
+    #define Y1_DIR_PIN                            46
+    #define Y1_ENABLE_PIN                         47
+
+  #endif
+
+  #if NUM_Z_STEPPER_DRIVERS > 1
+    
+    #define Z1_STEP_PIN                           13
+    #define Z1_DIR_PIN                            46
+    #define Z1_ENABLE_PIN                         47
+
+  #endif
+
+#elif //Si tenemos mas de un extrusor no podemos tener los motores configurados
+#undef X2_DRIVER_TYPE TMC2209
+#undef Y2_DRIVER_TYPE TMC2209
+#undef Z2_DRIVER_TYPE TMC2209
+#undef Z3_DRIVER_TYPE TMC2209
+#undef Z4_DRIVER_TYPE TMC2209
+
+//Si tenemos más de un extrusor lo que hacemos es definir el nuevo extrusor así como sus pines
+//Acordarse de definir el #define TEMP_SENSOR_1, ya que este contiene el tipo de sonda del extrusor E1
+
+
+
 #define E1_STEP_PIN                           13
 #define E1_DIR_PIN                            46
 #define E1_ENABLE_PIN                         47
+
+#define FIL_RUNOUT2_PIN                       14
+
+#endif
+
+
+
 
 
 //
@@ -626,3 +694,4 @@ Tabla de pines dentro de la bricolemon para configuración
   #undef SD_DETECT_PIN
   #define SD_DETECT_PIN                       95
 #endif
+
