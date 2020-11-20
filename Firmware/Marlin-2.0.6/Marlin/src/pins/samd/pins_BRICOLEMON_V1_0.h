@@ -64,6 +64,7 @@
 
 //Añadimos gracias a @SrFerrete el detalle de utilizar un ENDSTOP en punto maximo en vez de mínimo.
 
+// ##ENDDSTOPS BRICOLEMON##
 
 #ifdef USE_XMIN_PLUG
 #define X_MIN_PIN                             10
@@ -95,9 +96,10 @@
 
 
 //Seccion Extruder, esto hace que sea un sensor de filamento
-#define FIL_RUNOUT_PIN                             48
+#define FIL_RUNOUT_PIN                        48
 
-
+//Ejemplo de definición de un nuevo endstop, el cual iría al segundo eje Z
+//#define Z2_MIN_PIN                            48
 
 
 /*    Declaracion simple
