@@ -90,13 +90,14 @@
 #endif
 
 #ifdef USE_ZMAX_PLUG
-#define Z_MAX_PIN                             12
+//#define Z_MAX_PIN                             12
 #endif
 
 
 
-//Seccion Extruder, esto hace que sea un sensor de filamento
-#define FIL_RUNOUT_PIN                        48
+//Seccion Extruder 1, esto hace que sea un sensor de filamento
+//Detectado por @ShareHorizons
+#define FIL_RUNOUT_PIN                        32
 
 
 
@@ -161,6 +162,7 @@ Ejemplos de definición de endstop para motores que queramos poner en el E1, des
 #define X2_MAX_PIN                             14
 #define Y2_MAX_PIN                             14
 */
+
   #ifdef X_DUAL_STEPPER_DRIVERS
 
     #define X2_STEP_PIN                           13
@@ -171,17 +173,21 @@ Ejemplos de definición de endstop para motores que queramos poner en el E1, des
 
   #ifdef Y_DUAL_STEPPER_DRIVERS
     
-    #define Y1_STEP_PIN                           13
-    #define Y1_DIR_PIN                            46
-    #define Y1_ENABLE_PIN                         47
+    #define Y2_STEP_PIN                           13
+    #define Y2_DIR_PIN                            46
+    #define Y2_ENABLE_PIN                         47
 
   #endif
 
+  //TODO Corregir aquí que cuando tenemos dos extrusores o lo que sea, utiliza los endstop que le sobran, osea los max, no hay Z2_endstop
+
   #if NUM_Z_STEPPER_DRIVERS > 1
     
-    #define Z1_STEP_PIN                           13
-    #define Z1_DIR_PIN                            46
-    #define Z1_ENABLE_PIN                         47
+    #define Z2_STEP_PIN                           13
+    #define Z2_DIR_PIN                            46
+    #define Z2_ENABLE_PIN                         47
+
+    #define Z_MAX_PIN                             14
 
   #endif
 
@@ -218,6 +224,9 @@ Ejemplos de definición de endstop para motores que queramos poner en el E1, des
 #define TEMP_1_PIN                            3
 #define TEMP_BED_PIN                          2
 
+#if TEMP_SENSOR_CHAMBER > 0
+  #define TEMP_CHAMBER_PIN                    3
+#endif
 
 
 //
@@ -315,6 +324,26 @@ Ejemplos de definición de endstop para motores que queramos poner en el E1, des
 // LCDs and Controllers //
 //////////////////////////
 /*
+Conversión especial EXP1 to EXP3 para conectar impresoras Ender y su pantalla CR-10 Stock display
+
+                EXP1 convertido en EXP3
+               --------
+        VCC   | .    . | GND
+        LCDDE | .    . | LCDRS
+        LCDD4 | .    .   BTN_EN2
+        RESET | .    . | BTN_EN1
+  BTN_ENCODER | .    . | BEEPER
+               --------
+Vista de pines del EXP1
+               --------
+        VCC   | .    . | GND
+        D39   | .    . | D38
+        D37   | .    .   D36
+        D34   | .    . | D35
+        D40   | .    . | D41
+               --------
+
+
 Esquema de los expansion BricoLemon
 
                 EXP1
@@ -390,14 +419,15 @@ Tabla de pines dentro de la bricolemon para configuración
 
     #if ENABLED(CR10_STOCKDISPLAY)
 
-      // TO TEST
-      // #define LCD_PINS_RS       27
-      // #define LCD_PINS_ENABLE   29
-      // #define LCD_PINS_D4       25
+
+      // Working bricolemon
+         #define LCD_PINS_RS       38
+         #define LCD_PINS_ENABLE   39
+         #define LCD_PINS_D4       37
 
       #if DISABLED(NEWPANEL)
         // TO TEST
-        // #define BEEPER_PIN      37
+        // #define BEEPER_PIN      41
       #endif
 
     #elif ENABLED(ZONESTAR_LCD)
@@ -451,7 +481,6 @@ Tabla de pines dentro de la bricolemon para configuración
 
 
 
-
   //
   // LCD Display input pins
   //
@@ -462,19 +491,23 @@ Tabla de pines dentro de la bricolemon para configuración
       #define BEEPER_PIN                      41
 
       #if ENABLED(CR10_STOCKDISPLAY)
-        // TO TEST
-        // #define BTN_EN1         17
-        // #define BTN_EN2         23
+        // Working bricolemon
+         #define BTN_EN1         35
+         #define BTN_EN2         36
+         #define KILL_PIN        34
+         #define BTN_ENC         40
       #else
         #define BTN_EN1                       42
         #define BTN_EN2                       43
+        #define KILL_PIN                      49 
+        #define BTN_ENC                         40
       #endif
 
-      #define BTN_ENC                         40
+ 
       #ifndef SD_DETECT_PIN
         #define SD_DETECT_PIN                 44
       #endif
-      #define KILL_PIN                        49 //Habilitar en la revision final
+     
 
       #if ENABLED(BQ_LCD_SMART_CONTROLLER)
         // TO TEST
