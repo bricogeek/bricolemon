@@ -633,6 +633,8 @@
   #include "samd/pins_RAMPS_144.h"              // SAMD51                                 env:SAMD51_grandcentral_m4
 #elif MB(BRICOLEMON_V1_0)
   #include "samd/pins_BRICOLEMON_V1_0.h"
+#elif MB(BRICOLEMON_LITE_V1_0)
+  #include "samd/pins_BRICOLEMON_LITE_V1_0.h"
 
 //
 // Linux Native Debug board
