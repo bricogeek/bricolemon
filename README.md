@@ -1,11 +1,28 @@
-BricoLemon rev B
+BricoLemon rev C
 ========================================
 
-[![BricoLemon rev B](/Pictures/bricolemon-revb-800x515.jpg)](/Pictures/bricolemon-revb-800x515.jpg)
+[![BricoLemon](/Pictures/bricolemon-revb-800x515.jpg)](/Pictures/bricolemon-revb-800x515.jpg)
 
-[*BricoLemon rev B (PRO-0280)*](http://bcgk.co/bricolemon)
+[*BricoLemon (PRO-0280)*](https://tienda.bricogeek.com/impresion-3d-electronica/1476-bricolemon.html)
 
 Controladora de 32-bits para impresoras 3D y máquinas CNC con procesador SAMD51 de 120MHz, drivers Trinamic TMC2209, compatible con Marlin 2.0 y fabricada en España por BricoGeek y LemonCrest.
+
+Documentación
+--------------
+* **[Manual de usuario y Configuración](https://lab.bricogeek.com/tutorial/bricolemon)** - Guía detallada de hardware, conexiones y configuración
+
+Dónde comprar
+----------------
+* [BricoLemon en BricoGeek.com](https://tienda.bricogeek.com/impresion-3d-electronica/1476-bricolemon-revb.html)
+
+BricoLemon Lite
+========================================
+
+[![BricoLemon Lite](/Pictures/lite/bricolemon-lite.jpg)](/Pictures/lite/bricolemon-lite.jpg)
+
+[*BricoLemon Lite (PRO-0316)*](https://tienda.bricogeek.com/impresion-3d-electronica/1597-bricolemon-lite.html)
+
+Versión reducida con soporte para 3 ejes + 1 extrusor, procesador SAMD51 de 120MHz, drivers Trinamic TMC2209 y compatible en tamaño y conectores con las placas de Creality
 
 Contenido del repositorio
 -------------------
@@ -16,11 +33,19 @@ Contenido del repositorio
 
 Documentación
 --------------
-* **[Manual de usuario y Configuración](https://lab.bricogeek.com/tutorial/bricolemon-controladora-32-bits-samd51-120mhz-para-impresoras-3d)** - Guía detallada de hardware, conexiones y configuración
+* **[Manual de usuario y Configuración](https://lab.bricogeek.com/tutorial/bricolemon-lite)** - Guía detallada de hardware, conexiones y configuración
 
 Dónde comprar
 ----------------
-* [BricoLemon rev. B en BricoGeek.com](https://tienda.bricogeek.com/impresion-3d-electronica/1476-bricolemon-revb.html)
+* [BricoLemon Lite en BricoGeek.com](https://tienda.bricogeek.com/impresion-3d-electronica/1597-bricolemon-lite.html)
+
+Contenido del repositorio
+-------------------
+
+* **/Documentacion** - Datasheets, esquema e documentos con información detallada
+* **/Firmware** - Versiones de Marlin y archivos de configuración
+* **/Pictures** - Imágenes de la placa
+
 
 Licencias
 -------------------
